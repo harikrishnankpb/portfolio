@@ -1,0 +1,182 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+import ContactCTA from "../components/ContactCTA.astro";
+import Hero from "../components/Hero.astro";
+---
+
+<BaseLayout
+  title="About | Harikrishnan"
+  description="About Harikrishnan Lorem Ipsum"
+>
+  <div class="stack gap-20">
+    <main class="wrapper about">
+      <Hero title="About">
+        <!-- <img
+          width="1553"
+          height="873"
+          src="/assets/at-work.jpg"
+          alt="Harikrishnan at work with a colleague"
+        /> -->
+      </Hero>
+
+      <section>
+        <h2 class="section-title">Background</h2>
+        <div class="content">
+          <p>
+            I'm a passionate web developer with expertise in backend
+            technologies like Node.js and Python Django. My educational
+            background includes a Master's in Computer Application and a
+            Bachelor's in Computer Science, which fuels my enthusiasm for
+            crafting seamless web applications. Alongside my skills in Vue and
+            React, I excel at delivering efficient, user-friendly, and visually
+            appealing solutions. Let's team up and transform your visions into
+            captivating digital experiences!
+          </p>
+        </div>
+      </section>
+      <section>
+        <h2 class="section-title">Education</h2>
+        <div class="content">
+          <div class="section-data">
+            <div class="education-title">
+              <p class="course-name">Master of Computer Application</p>
+              <p class="year-passing">Aug 2018 - Dec 2021</p>
+            </div>
+            <div class="education-unversity">
+              <p>University of Calicut</p>
+            </div>
+          </div>
+          <br />
+          <div class="section-data">
+            <div class="education-title">
+              <p class="course-name">Bsc Computer Science</p>
+              <p class="year-passing">June 2015 - April 2018</p>
+            </div>
+            <div class="education-unversity">
+              <p>EMEA College of Arts and Science</p>
+            </div>
+          </div>
+          <br />
+          <div class="section-data">
+            <div class="education-title">
+              <p class="course-name">Higher Secondary</p>
+              <p class="year-passing">June 2013 - April 2015</p>
+            </div>
+            <div class="education-unversity">
+              <p>RHSS Ramanattukara</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h2 class="section-title">Experience</h2>
+        <div class="content">
+          <div class="section-data">
+            <div class="education-title">
+              <p class="course-name">Web Developer and Freelance Consultant</p>
+              <p class="year-passing">July 2023 - Present</p>
+            </div>
+            <div class="Codashious">
+              <p>University of Calicut</p>
+            </div>
+          </div>
+          <br />
+          <div class="section-data">
+            <div class="education-title">
+              <p class="course-name">Project Lead</p>
+              <p class="year-passing">May 2022 - Jun 2023</p>
+            </div>
+            <div class="Codashious">
+              <p>Armino Technologies</p>
+            </div>
+          </div>
+          <br />
+          <div class="section-data">
+            <div class="education-title">
+              <p class="course-name">Web Developer</p>
+              <p class="year-passing">Sep 2021 - Mar 2022</p>
+            </div>
+            <div class="Codashious">
+              <p>Credot</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <ContactCTA />
+  </div>
+</BaseLayout>
+
+<style>
+  .about {
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+  }
+  .course-name {
+    font-size: 1.5rem;
+  }
+  .year-passing {
+    font-size: 1.2rem;
+  }
+  .section-data {
+    display: flex;
+    flex-direction: column;
+  }
+  .education-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  img {
+    margin-top: 1.5rem;
+    border-radius: 1.5rem;
+    box-shadow: var(--shadow-md);
+  }
+
+  section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    color: var(--gray-200);
+  }
+
+  .section-title {
+    grid-column-start: 1;
+    font-size: var(--text-xl);
+    color: var(--gray-0);
+  }
+
+  .content {
+    grid-column: 2 / 4;
+  }
+
+  .content :global(a) {
+    text-decoration: 1px solid underline transparent;
+    text-underline-offset: 0.25em;
+    transition: text-decoration-color var(--theme-transition);
+  }
+
+  .content :global(a:hover),
+  .content :global(a:focus) {
+    text-decoration-color: currentColor;
+  }
+
+  @media (min-width: 50em) {
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 60% 1fr;
+    }
+
+    .about > :global(:first-child) {
+      grid-column-start: 2;
+    }
+
+    section {
+      display: contents;
+      font-size: var(--text-lg);
+    }
+  }
+</style>
